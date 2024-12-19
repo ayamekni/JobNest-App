@@ -71,10 +71,22 @@ JobNest/
    pip install -r requirements.txt
    ```
 
-5. **Set Up MongoDB**:
-   - Install MongoDB and ensure it is running locally or use a cloud MongoDB instance.
-   - Update the `MONGO_URI` in `app.py` if needed.
-
+5. **Set Up Environment Variables**:
+  - Copy the example.env file and rename it to .env.
+  - Add your own variables in the .env file:
+    ```bash
+   SCRAPING_URL=https://hi-interns.com/internships?facets=%5B%22Company.City%22%2C%22Keywords.Value%22%5D&facetFilters=%5B%5B%22Keywords.Value%3APython%22%5D%5D
+   WEBDRIVER_URL=
+   # MongoDB Configuration
+   MONGO_URL=
+   DB_NAME=
+   COLLECTION_NAME=
+   # LinkedIn login credentials (replace with your own)
+   USERNAME=
+   PASSWORD=
+   # LinkedIn job search base URL
+   BASE_URL=https://www.linkedin.com/jobs/search/?keywords={}&location=Tunisia
+    ```
 6. **Run the Application**:
    ```bash
    python app.py
