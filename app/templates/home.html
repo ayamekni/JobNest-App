@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <title>JobNest - Your Career Starts in the Nest</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #d9e4f5;
+            color: #001f3f;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #d9e4f5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 2rem 2.5rem;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 250px;
+            height: auto;
+            margin-right: 40px;
+        }
+
+        /* Center the phrase */
+.centered-phrase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh; /* Adjust height for proper centering */
+    text-align: center;
+}
+
+/* Style the h1 */
+.centered-phrase h1 {
+    font-family: 'Pacifico', cursive; /* A fun cursive font */
+    font-size: 3rem; /* Adjust the size */
+    color: #033253; /* Deep blue */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    animation: float 3s ease-in-out infinite; /* Dynamic floating animation */
+    margin: 0;
+}
+
+/* Animation for dynamic effect */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+        .nav-buttons {
+            position: absolute;
+            top: 1rem;
+            right: 2.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            color: #001f3f;
+            background-color: #87cefa;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #4682b4;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            text-align: center;
+            margin: 2rem;
+        }
+
+        select {
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Jobs Container */
+        .jobs-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns for wider cards */
+            gap: 1.5rem;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .job-card {
+            background: #f0f8ff;
+            color: #001f3f;
+            border: none;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .job-card h2 {
+            color: #4682b4;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            gap: 1rem;
+        }
+
+        .pagination a {
+            text-decoration: none;
+            color: #001f3f;
+            background-color: #87cefa;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination a:hover {
+            background-color: #4682b4;
+            color: #fff;
+        }
+
+        .pagination .active {
+            background-color: #4682b4;
+            color: #fff;
+        }
+
+        /* Footer */
+        /* Footer Styling */
+footer {
+    background:#d9e4f5; /* Gradient similar to image */
+    color: #333;
+    padding: 2rem 1.5rem;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 50px; /* Logo size */
+    height: auto;
+    margin-right: 10px;
+}
+
+.footer-logo h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #001f3f;
+}
+
+.footer-links a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #4682b4; /* Light blue on hover */
+}
+
+.footer-social a img {
+    width: 24px;
+    height: 24px;
+    margin-left: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-social a img:hover {
+    transform: scale(1.2); /* Slight zoom effect */
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 1rem 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: #666;
+}
+.apply-button {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #2d71b9;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.apply-button:hover {
+    background-color: #0056b3;
+}
+
+h3 {
+        font-family: 'Arial', sans-serif; /* Normal font style */
+        font-size: 1rem; /* Slightly smaller than h1 */
+        color: #21045c; /* Navy blue color for a professional look */
+        text-align: center; /* Centered text */
+        margin: 0 auto 1.5rem auto; /* Center horizontally with spacing below */
+        padding: 0 20px; /* Add space on the sides */
+        max-width: 80%;
+    }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/Jobnest.png') }}" alt="JobNest Logo">
+            <div class="centered-phrase">
+                <h1>Your Career Starts in the Nest</h1>
+            </div>
+            
+        </div>
+        <div class="nav-buttons">
+            {% if user %}
+                <!-- Logged-in user view -->
+                <p>Welcome, {{ user }}!</p>
+                <a href="/logout">Logout</a>
+                <a href="/notifications">Notifications</a>
+            {% else %}
+                <!-- Guest view -->
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            {% endif %}
+        </div>
+    </header>
+<h3>"JobNest is where innovation meets opportunity. It’s the launchpad for bright minds to build their future, the nest where careers are nurtured, and dreams take flight. Here, the doors to your dream IT job swing open, empowering you to soar higher like a bird in an endless sky of possibilities.Join us now !"</h3>
+    <!-- Filter Section -->
+    <div class="filter-section">
+        <form method="get" action="/">
+            <label for="job_type">Filter by:</label>
+            <select name="job_type" id="job_type" onchange="this.form.submit()">
+                <option value="All" {% if job_type == 'All' %}selected{% endif %}>All</option>
+                <option value="Job" {% if job_type == 'Job' %}selected{% endif %}>Jobs</option>
+                <option value="Internship" {% if job_type == 'Internship' %}selected{% endif %}>Internships</option>
+            </select>
+             <!-- Location Filter -->
+            <label for="location">Filter by Location:</label>
+            <select name="location" id="location" onchange="this.form.submit()">
+                  <option value="All" {% if location == 'All' %}selected{% endif %}>All</option>
+                   {% for loc in locations %}
+                   <option value="{{ loc }}" {% if location == loc %}selected{% endif %}>
+                   {{ loc }}
+                  </option>
+        {% endfor %}
+    </select>
+        </form>
+    </div>
+
+    <!-- Jobs Container -->
+    <div class="jobs-container">
+        {% for job in jobs %}
+        <div class="job-card">
+            <h2>{{ job.title }}</h2>
+            <p><strong>Location:</strong> {{ job.location.split(',')[0] }}</p>
+            <p><strong>Company:</strong> {{ job.company }}</p>
+            <p><strong>Description:</strong>
+                {% if job.type == 'job' %}
+                <a href="{{ job.description.split('Job posting: ')[1] }}" target="_blank">link</a>
+            
+                {% else %}
+                    {{ job.description }}
+                {% endif %}
+            
+            </p>
+            <a href="{{ url_for('apply', title=job.title) }}" class="apply-button">Apply</a>
+            
+        </div>
+        {% else %}
+        <p>No jobs available.</p>
+        {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+<div class="pagination">
+    {% for p in range(1, total_pages + 1) %}
+        <a href="/?page={{ p }}&job_type={{ job_type }}&location={{ location }}" 
+           class="{% if p == page %}active{% endif %}">
+            {{ p }}
+        </a>
+    {% endfor %}
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Logo -->
+            <div class="footer-logo">
+                <img src="{{ url_for('static', filename='images/Jobnest.png') }}" alt="JobNest Logo">
+                <h2>JobNest</h2>
+            </div>
+    
+            <!-- Navigation Links -->
+            <div class="footer-links">
+                <a href="#">À propos</a>
+                <a href="#">Contact</a>
+                <a href="#">Entreprises</a>
+                <a href="#">Stages</a>
+            </div>
+    
+            <!-- Social Media Icons -->
+            <div class="footer-social">
+                <a href="#"><img src="{{ url_for('static', filename='images/facebook.png') }}" alt="Facebook"></a>
+                <a href="#"><img src="{{ url_for('static', filename='images/instagram.jpg') }}" alt="Instagram"></a>
+                <a href="#"><img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="LinkedIn"></a>
+            </div>
+        </div>
+    
+        <!-- Bottom Copyright -->
+        <hr>
+        <div class="footer-bottom">
+            <p>&copy; 2024 JobNest. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

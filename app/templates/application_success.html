@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Submitted</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d9e4f5;
+            color: #001f3f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #033253;
+            margin-bottom: 1.5rem;
+        }
+
+        .message-container {
+            background-color: #f0f8ff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .message-container p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .message-container strong {
+            color: #007BFF;
+        }
+
+        .back-home {
+            margin-top: 1rem;
+            text-decoration: none;
+            font-size: 1rem;
+            color: #001f3f;
+            background-color: #87cefa;
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .back-home:hover {
+            background-color: #4682b4;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/Jobnest.png') }}" alt="JobNest Logo">
+    </div>
+    <h1>Application Submitted</h1>
+    <div class="message-container">
+        <p>Thank you for applying for the position: <strong>{{ job_title }}</strong>.</p>
+        <p>Your application will be sent to the company for this position. They will review your application and get back to you shortly</p>
+        <a href="{{ url_for('home') }}" class="back-home">Return to Home</a>
+    </div>
+</body>
+</html>

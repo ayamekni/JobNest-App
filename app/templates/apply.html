@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for {{ job_title }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+       
+        header {
+    width: 100%;
+    background-color: #d9e4f5; /* Light background matching the home page */
+    display: flex; /* Flexbox layout */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Center logo horizontally */
+    padding: 1rem 0; /* Add spacing to prevent cropping */
+    position: relative; /* Allows for absolute positioning if needed */
+    overflow: visible; /* Ensure nothing is clipped */
+}
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d9e4f5; /* Match home page background */
+            color: #001f3f; /* Navy Blue text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+            flex-direction: column;
+        }
+        .logo img {
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+    margin-bottom: 1rem; /* Space below the logo */
+    display: block; /* Ensure the logo is treated as a block element */
+    max-width: 100%; /* Prevent overflow in smaller containers */
+}
+
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #033253;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        h1 span {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #d1a0f6;
+        }
+
+        .form-container {
+            background-color: rgba(208, 175, 243, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #555;
+            text-align: left;
+        }
+
+        .form-container input,
+        .form-container textarea,
+        .form-container button {
+            width: 100%;
+            margin-bottom: 1.5rem;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container input:focus,
+        .form-container textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+            box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+        }
+
+        .form-container textarea {
+            resize: vertical;
+        }
+
+        .form-container button {
+            background-color: #294462;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #191b1d;
+        }
+
+        .back-home {
+            margin-top: 1rem;
+            text-decoration: none;
+            font-size: 1rem;
+            color: #001f3f;
+            background-color: #87cefa;
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .back-home:hover {
+            background-color: #4682b4;
+            color: #fff;
+        }
+    </style>
+</head>
+<header>
+    <div class="logo">
+    <img src="{{ url_for('static', filename='images/Jobnest.png') }}" alt="JobNest Logo">
+</div>
+</header>
+<body>
+
+    <h1>Apply for <span>{{ job_title }}</span></h1>
+
+    <div class="form-container">
+        <form method="POST" action="{{ url_for('apply') }}" enctype="multipart/form-data">
+            <input type="hidden" name="job_title" value="{{ job_title }}">
+
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="cover_letter">Cover Letter:</label>
+            <textarea id="cover_letter" name="cover_letter" rows="5" placeholder="Write your cover letter here" required></textarea>
+
+            <label for="cv">Attach Your CV:</label>
+            <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+
+            <button type="submit">Submit Application</button>
+        </form>
+        <a href="{{ url_for('home') }}" class="back-home">Back to Home</a>
+    </div>
+</body>
+</html>

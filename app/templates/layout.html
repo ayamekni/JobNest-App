@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Scraping Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Job Offers</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Job Scraper. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

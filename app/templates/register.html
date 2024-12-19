@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - JobNest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d9e4f5;
+            color: #001f3f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .logo img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #033253;
+            margin-bottom: 2rem;
+        }
+
+        .form-container {
+            background-color: #f0f8ff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-container button {
+            background-color: #87cefa;
+            color: #001f3f;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #4682b4;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4682b4;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .back-home {
+            margin-top: 1rem;
+            text-decoration: none;
+            font-size: 1rem;
+            color: #001f3f;
+            background-color: #87cefa;
+            padding: 0.5rem 1.5rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-home:hover {
+            background-color: #4682b4;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="{{ url_for('static', filename='images/Jobnest.png') }}" alt="JobNest Logo">
+    </div>
+    <h1>Join JobNest Today!</h1>
+
+    <div class="form-container">
+        <form action="/register" method="POST">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <a href="/login">Already have an account? Login</a>
+        <!-- Back to Home Button -->
+        <a href="/" class="back-home">Back to Home</a>
+    </div>
+</body>
+</html>
