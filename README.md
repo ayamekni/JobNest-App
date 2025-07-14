@@ -2,6 +2,12 @@
 
 JobNest is a web application designed to connect IT professionals and students to job and internship opportunities. It features real-time job scraping, user registration, and personalized application tracking in a modern, user-friendly interface.
 
+<img width="1919" height="834" alt="Screenshot 2025-07-14 172455" src="https://github.com/user-attachments/assets/0228276e-b368-4b5a-9588-6a2f23c9ae6a" />
+<img width="1919" height="902" alt="Screenshot 2025-07-14 172523" src="https://github.com/user-attachments/assets/89a8d55c-5aa1-4644-b8e5-c8649e55a253" />
+<img width="1918" height="898" alt="Screenshot 2025-07-14 172555" src="https://github.com/user-attachments/assets/64836c33-662e-4340-803a-da8610ca46f4" />
+
+<img width="1919" height="892" alt="Screenshot 2025-07-14 172617" src="https://github.com/user-attachments/assets/821670b1-d5bc-44f7-b17c-538c44669f16" />
+
 ## Features
 - **Real-Time Job Scraping**: Automatically fetch job and internship opportunities from various platforms.
 - **Dynamic Filters**: Filter opportunities by type (Job/Internship) and location.
