@@ -2,6 +2,15 @@
 
 JobNest is a web application designed to connect IT professionals and students to job and internship opportunities. It features real-time job scraping, user registration, and personalized application tracking in a modern, user-friendly interface.
 
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![BeautifulSoup](https://img.shields.io/badge/BeautifulSoup-4B8BBE?style=for-the-badge&logo=python&logoColor=white)
+![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+
+
 <img width="1919" height="834" alt="Screenshot 2025-07-14 172455" src="https://github.com/user-attachments/assets/0228276e-b368-4b5a-9588-6a2f23c9ae6a" />
 <img width="1919" height="902" alt="Screenshot 2025-07-14 172523" src="https://github.com/user-attachments/assets/89a8d55c-5aa1-4644-b8e5-c8649e55a253" />
 <img width="1918" height="898" alt="Screenshot 2025-07-14 172555" src="https://github.com/user-attachments/assets/64836c33-662e-4340-803a-da8610ca46f4" />
